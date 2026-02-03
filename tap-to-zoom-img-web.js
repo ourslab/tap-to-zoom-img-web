@@ -20,7 +20,7 @@ function zoom_view_show(zoom_view_dom, img_url) {
 
 window.addEventListener("load", function(e=null) {
   const zoom_view_dom = document.createElement("img");
-  zoom_view_dom.class = "zoom-view";
+  zoom_view_dom.className = "zoom-view";
   zoom_view_dom.style.position = "fixed";
   zoom_view_dom.style.top = "0px";
   zoom_view_dom.style.left = "0px";
