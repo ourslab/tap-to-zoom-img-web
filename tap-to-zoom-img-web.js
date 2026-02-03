@@ -28,7 +28,7 @@ window.addEventListener("load", function(e=null) {
   zoom_view_dom.img = document.createElement("img");
   zoom_view_dom.img.className = "zoom-view";
   zoom_view_dom.img.style.objectFit = "contain";
-  zoom_view_dom.img.style.backgroundFilter = "blur(5px)";
+  zoom_view_dom.img.style.backdropFilter = "blur(5px)";
   zoom_view_dom.img.addEventListener("click", function (e=null) {
     zoom_view_dom.style.display = "none";
   });
