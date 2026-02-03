@@ -35,7 +35,6 @@ window.addEventListener("load", function(e=null) {
   document.body.appendChild(zoom_view_dom);
   [].slice.call(document.querySelectorAll('img')).forEach(img => {
     if (img.className == "zoom-view") {
-      continue;
     } else if (img.parentElement.tagName === "FIGURE") {
       img.parentElement.addEventListener("click", function (e=null) {
         zoom_view_show(zoom_view_dom, img.src);
