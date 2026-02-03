@@ -12,6 +12,7 @@ function zoom_view_show(zoom_view_dom, img_url) {
   zoom_view_dom.style.width = `${window_width}px`;
   zoom_view_dom.style.height = `${window_height}px`;
   zoom_view_dom.style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 
 window.addEventListener("load", function(e=null) {
@@ -31,6 +32,7 @@ window.addEventListener("load", function(e=null) {
   zoom_view_dom.img.style.backdropFilter = "blur(5px)";
   zoom_view_dom.img.addEventListener("click", function (e=null) {
     zoom_view_dom.style.display = "none";
+    document.body.style.overflow = "unset";
   });
   zoom_view_dom.appendChild(zoom_view_dom.img);
   document.body.appendChild(zoom_view_dom);
