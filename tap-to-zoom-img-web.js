@@ -1,4 +1,6 @@
-function zoom_view_show(zoom_view_dom, img_url) {
+let zoom_view_dom;
+
+function zoom_view_show(img_url) {
   const window_width = document.documentElement.clientWidth;
   const window_height = document.documentElement.clientHeight;
   zoom_view_dom.src = img_url;
@@ -19,7 +21,7 @@ function zoom_view_show(zoom_view_dom, img_url) {
 }
 
 window.addEventListener("load", function(e=null) {
-  const zoom_view_dom = document.createElement("img");
+  zoom_view_dom = document.createElement("img");
   zoom_view_dom.style.position = "fixed";
   zoom_view_dom.style.top = "0px";
   zoom_view_dom.style.left = "0px";
@@ -32,11 +34,11 @@ window.addEventListener("load", function(e=null) {
   for (let a = 0; a < img_list.length; a++) {
     if (img_list[a].parentElement.tagName === "FIGURE") {
       img_list[a].parentElement.addEventListener("click", function (e=null) {
-        zoom_view_show(zoom_view_dom, img_list[a].src);
+        zoom_view_show(img_list[a].src);
       });
     } else {
       img_list[a].addEventListener("click", function(e=null) {
-        zoom_view_show(zoom_view_dom, img_list[a].src);
+        zoom_view_show(img_list[a].src);
       });
     }
   }
