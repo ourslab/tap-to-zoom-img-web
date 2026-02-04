@@ -3,6 +3,7 @@ function zoom_view_show(zoom_view_dom, img_url) {
   const window_height = document.documentElement.clientHeight;
   zoom_view_dom.style.width = `${window_width}px`;
   zoom_view_dom.style.height = `${window_height}px`;
+  zoom_view_dom.img.src = img_url;
   if (window_width > window_height) {
     zoom_view_dom.img.style.width = `${window_width}px`;
     zoom_view_dom.img.style.height = `${window_width}px`;
@@ -12,7 +13,6 @@ function zoom_view_show(zoom_view_dom, img_url) {
     zoom_view_dom.img.style.height = `${window_height}px`;
     zoom_view_dom.scrollTo((window_height - window_width) / 2, 0);
   }
-  zoom_view_dom.img.src = img_url;
   zoom_view_dom.style.display = "block";
   document.body.style.overflow = "hidden";
 }
