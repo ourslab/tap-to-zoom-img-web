@@ -1,6 +1,6 @@
 function zoom_view_show(zoom_view_dom, img_url) {
-  const window_width = window.innerWidth;
-  const window_height = window.innerHeight
+  const window_width = document.documentElement.clientWidth;
+  const window_height = document.documentElement.clientHeight;
   zoom_view_dom.style.width = `${window_width}px`;
   zoom_view_dom.style.height = `${window_height}px`;
   zoom_view_dom.img.src = img_url;
