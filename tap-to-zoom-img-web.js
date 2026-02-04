@@ -1,16 +1,18 @@
 function zoom_view_show(zoom_view_dom, img_url) {
   const window_width = document.documentElement.clientWidth;
   const window_height = document.documentElement.clientHeight;
+  zoom_view_dom.style.width = `${window_width}px`;
+  zoom_view_dom.style.height = `${window_height}px`;
   if (window_width > window_height) {
     zoom_view_dom.img.style.width = `${window_width}px`;
     zoom_view_dom.img.style.height = `${window_width}px`;
+    zoom_view_dom.scrollTo(0, (window_width - window_height) / 2);
   } else {
     zoom_view_dom.img.style.width = `${window_height}px`;
     zoom_view_dom.img.style.height = `${window_height}px`;
+    zoom_view_dom.scrollTo((window_height - window_width) / 2, 0);
   }
   zoom_view_dom.img.src = img_url;
-  zoom_view_dom.style.width = `${window_width}px`;
-  zoom_view_dom.style.height = `${window_height}px`;
   zoom_view_dom.style.display = "block";
   document.body.style.overflow = "hidden";
 }
@@ -24,8 +26,7 @@ window.addEventListener("load", function(e=null) {
   zoom_view_dom.style.margin = "0px";
   // zoom_view_dom.style.padding = "1vh 1vw";
   zoom_view_dom.style.padding = "0px";
-  zoom_view_dom.style.overflowX = "hidden";
-  zoom_view_dom.style.overflowY = "scroll";
+  zoom_view_dom.style.overflow = "scroll";
   zoom_view_dom.img = document.createElement("img");
   zoom_view_dom.img.className = "zoom-view";
   zoom_view_dom.img.style.objectFit = "contain";
